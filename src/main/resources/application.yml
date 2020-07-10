@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    session:
+      timeout: 3600
+spring:
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+  application:
+    name: tywl-tools-web
+  thymeleaf:
+    prefix: classpath:/views/
+    suffix: .html
+    cache: false
+    mode: LEGACYHTML5
+    servlet:
+      content-type: text/html
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+logging:
+  level:
+    root: INFO
+

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>菌丝培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="../css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="../css/app.css?v=1.3"/>
+    <script type="text/javascript" charset="utf-8" src="../libs/vue.js" ></script>
+    <script type="text/javascript" charset="utf-8" src="../js/mui.js" ></script>
+    <style>
+        .title {
+            margin: 20px 15px 10px;
+            color: #6d6d72;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app" v-cloak v-if="detail != null">
+    <div id="out-door" style="position: fixed;top: 0;width: 100%;z-index: 10;background-color: #333444;">
+        <ul style="height: 30px;line-height: 30px;list-style: none;padding: 2px 10px;margin: 0px;">
+            <li style="float: left;height: 30px;line-height: 30px;">
+                <span style="color: #6FE3CD;font-size: 15px">当前状态：{{detail.status}}</span>
+            </li>
+            <!--<li style="float: right;height: 30px;line-height: 30px;padding-right: 10px;">
+                <img style="width: 30px;height: 30px;" src="../images/smart/networks.png?v=1.1">
+            </li>-->
+            <li style="float: right;height: 30px;line-height: 30px;padding-right: 10px;">
+                <span style="color: #818EFF;font-size: 18px;height: 30px;font-weight: bold;">{{(detail.outdoor.humidity || detail.outdoor.humidity == 0) ? detail.outdoor.humidity : '--'}}</span>
+            </li>
+            <li style="float: right;height: 30px;line-height: 30px;padding-right: 0px;">
+                <img style="width: 30px;height: 30px;" src="../images/smart/humidity_icon.png?v=1.1">
+            </li>
+            <li style="float: right;height: 30px;line-height: 30px;padding-right: 10px;">
+                <span style="color: #6FE3CD;font-size: 18px;height: 30px;font-weight: bold;">{{(detail.outdoor.temperature || detail.outdoor.temperature == 0) ? detail.outdoor.temperature : '--'}}</span>
+            </li>
+            <li style="float: right;height: 30px;line-height: 30px;padding-right: 0px;">
+                <img style="width: 30px;height: 30px;" src="../images/smart/temperature_icon.png?v=1.1">
+            </li>
+        </ul>
+        <hr style="border-color: #000000;">
+    </div>
+    <div style="position:relative;top: 35px;">
+        <div id="temperature" class="mui-content">
+            <div class="mui-card">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell mui-media">
+                        <a href="javascript:;">
+                            <div class="mui-media-body">
+                                <div class="body-left" style="width: 30%;float: left;">
+                                    <div><img class="mui-media-object mui-pull-left" src="../images/smart/temperature_icon.png?v=1.1"><font :color="detail.temperature.status == 0 ? '' : 'red'">温度</font></div>
+                                    <div class="item-value">{{detail.temperature.value}}</div>
+                                    <div class="item-target-value">预设值：{{detail.temperature.startTarget}}~{{detail.temperature.endTarget}} 度</div>
+                                </div>
+                                <div class="body-right" style="float: right;width: 65%;">
+                                    <img style="width: 70px;height: 70px;max-width: 70px;margin-right: 20px" class="mui-media-object item-img1" :src="'../images/smart/temperature'+ (detail.temperature.enable == 0 ? '_open' : 's_open') + '_icon.png?v=1.1'">
+                                    <img style="width: 70px;height: 70px;max-width: 70px;" class="mui-media-object item-img2" :src="'../images/smart/temperature'+ (detail.temperature.enable == 0 ? 's_close' : '_close') + '_icon.png?v=1.1'">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="humidity" class="mui-content">
+            <div class="mui-card">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell mui-media">
+                        <a href="javascript:;">
+                            <div class="mui-media-body">
+                                <div class="body-left" style="width: 30%;float: left;">
+                                    <div><img class="mui-media-object mui-pull-left" src="../images/smart/humidity_icon.png?v=1.1">湿度</div>
+                                    <div class="item-value">{{detail.humidity.value}}</div>
+                                    <div class="item-target-value">预设值：{{detail.humidity.startTarget}}~{{detail.humidity.endTarget}}</div>
+                                </div>
+                                <div class="body-right" style="float: right;width: 65%;">
+                                    <img style="width: 70px;height: 70px;max-width: 70px;margin-right: 20px" class="mui-media-object item-img1" :src="'../images/smart/humidity'+ (detail.humidity.enable == 0 ? '_open' : 's_open') + '_icon.png?v=1.1'">
+                                    <img style="width: 70px;height: 70px;max-width: 70px;" class="mui-media-object item-img2" :src="'../images/smart/humidity'+ (detail.humidity.enable == 0 ? 's_close' : '_close') + '_icon.png?v=1.1'">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="illumination" class="mui-content">
+            <div class="mui-card">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell mui-media">
+                        <a href="javascript:;">
+                            <div class="mui-media-body">
+                                <div class="body-left" style="width: 30%;float: left;">
+                                    <div><img class="mui-media-object mui-pull-left" src="../images/smart/illumination_icon.png?v=1.1">光照度</div>
+                                    <div class="item-value">{{detail.illumination.value}}</div>
+                                    <div class="item-target-value">预设值：{{detail.illumination.startTarget}}~{{detail.illumination.endTarget}}</div>
+                                </div>
+                                <div class="body-right" style="float: right;width: 65%;">
+                                    <img v-if="detail.illumination.value <= 0" style="width: 80px;height: 80px;max-width: 80px;margin-right: 50px;" class="mui-media-object item-img1" src="../images/smart/illumination.png?v=1.1">
+                                    <img v-else-if="detail.illumination.value >= 1 &&  detail.illumination.value < 50000" style="width: 80px;height: 80px;max-width: 80px;margin-right: 50px;" class="mui-media-object item-img1" src="../images/smart/illumination1.png?v=1.1">
+                                    <img v-else-if="detail.illumination.value >= 50000 &&  detail.illumination.value < 100000" style="width: 80px;height: 80px;max-width: 80px;margin-right: 50px;" class="mui-media-object item-img1" src="../images/smart/illumination2.png?v=1.1">
+                                    <img v-else style="width: 80px;height: 80px;max-width: 80px;margin-right: 50px;" class="mui-media-object item-img1" src="../images/smart/illumination3.png?v=1.1">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="co2" class="mui-content" style="margin-bottom: 50px;">
+            <div class="mui-card">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell mui-media">
+                        <a href="javascript:;">
+                            <div class="mui-media-body">
+                                <div class="body-left" style="width: 30%;float: left;">
+                                    <div><img class="mui-media-object mui-pull-left" src="../images/smart/co2_icon.png?v=1.1">CO2</div>
+                                    <div class="item-value">{{detail.co2.value}}</div>
+                                    <div class="item-target-value">预设值：{{detail.co2.startTarget}}~{{detail.co2.endTarget}}</div>
+                                </div>
+                                <div class="body-right" style="float: right;width: 65%;">
+                                    <img style="width: 70px;height: 70px;max-width: 70px;margin-right: 20px" class="mui-media-object item-img1" :src="'../images/smart/co2'+ (detail.co2.enable == 0 ? '_open' : 's_open') + '_icon.png?v=1.1'">
+                                    <img style="width: 70px;height: 70px;max-width: 70px;" class="mui-media-object item-img2" :src="'../images/smart/co2'+ (detail.co2.enable == 0 ? 's_close' : '_close') + '_icon.png?v=1.1'">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8" src="../js/app.js" ></script>
+</body>
+</html>

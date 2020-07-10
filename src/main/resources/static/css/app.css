@@ -1,0 +1,98 @@
+/*
+ *这是单独为hello mui准备的个性化css，可以覆盖标准mui的css定义；
+ * 在实际项目开发时，建议为App单独写一个css文件，从而实现项目的自定义皮肤功能；
+ * 
+ * */
+.mui-plus header.mui-bar{
+	display: none;
+}
+.mui-plus .mui-bar-nav~.mui-content{
+	padding: 0;
+}
+
+/*hm开头的表示仅为 Hello MUI示例定义*/
+.hm-description{
+	margin: .5em 0;
+}
+
+.hm-description>li {
+	font-size: 14px;
+	color: #8f8f94;
+}
+
+body,
+.mui-content,
+.mui-card {
+	background-color: #333444;
+}
+
+.mui-card {
+	margin-bottom: 10px;
+}
+
+.mui-content {
+	padding-top: 0px;
+}
+
+.mui-content .mui-media-body {
+	line-height: 45px;
+}
+
+/**
+ * outdoor
+ */
+#outdoor .mui-table-view {
+	background-color: #3E575F;
+	border-color: #3E575F;
+	color: #6FE3CD!important;
+}
+
+/**
+ * 温度
+ */
+#temperature .mui-table-view {
+	background-color: #3E575F;
+	border-color: #3E575F;
+	color: #6FE3CD!important;
+}
+
+/**
+ * 湿度
+ */
+#humidity .mui-table-view {
+	background-color: #42466A;
+	border-color: #42466A;
+	color: #818EFF!important;
+}
+
+/**
+ * 光照
+ */
+#illumination .mui-table-view {
+	background-color: #4B564D;
+	border-color: #4B564D;
+	color: #ACE070!important;
+}
+
+/**
+ * CO2
+ */
+#co2 .mui-table-view {
+	background-color: #3D516A;
+	border-color: #3D516A;
+	color: #66C5FF!important;
+}
+
+.mui-content .item-value {
+	font-size: 40px;
+	font-weight: bold;
+	margin-left: 6px;
+}
+
+.body-right {
+	height: 100px;
+	line-height: 200px;
+	text-align: right;
+}
+	
+	
