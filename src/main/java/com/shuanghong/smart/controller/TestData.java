@@ -1,7 +1,6 @@
 package com.shuanghong.smart.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shuanghong.smart.domain.info.DataSyncInfo;
 
 /**
