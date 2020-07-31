@@ -9,6 +9,6 @@ import lombok.Data;
  * @Date 2020-07-07 19:33
  */
 @Data
-public class OxygenInfo extends IndicatorInfo {
+public class O2Info extends IndicatorInfo {
 
 }

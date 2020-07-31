@@ -3,9 +3,7 @@ package com.shuanghong.smart.domain.info;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 @Data
 public class DataSyncInfo {
@@ -38,7 +36,7 @@ public class DataSyncInfo {
     private Co2Info co2;
 
     @ApiModelProperty(value ="氧气信息")
-    private OxygenInfo oxygen;
+    private O2Info o2;
 
     @ApiModelProperty(value ="负离子信息")
     private AnoinInfo anoin;
