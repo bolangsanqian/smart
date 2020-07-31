@@ -23,11 +23,12 @@
 body,
 .mui-content,
 .mui-card {
-	background-color: #333444;
+	background-color: #EEEEEE;
 }
 
 .mui-card {
 	margin-bottom: 10px;
+	border-radius: 6px;
 }
 
 .mui-content {
@@ -38,55 +39,119 @@ body,
 	line-height: 45px;
 }
 
+.mui-table-view .mui-media-object.mui-pull-left {
+	margin-right: 0px;
+}
+.mui-table-view .mui-media-object {
+	line-height: 35px;
+	max-width: 35px;
+	height: 35px;
+}
+
 /**
  * outdoor
  */
 #outdoor .mui-table-view {
-	background-color: #3E575F;
-	border-color: #3E575F;
-	color: #6FE3CD!important;
+	background-color: #EEEEEE;
+	border-color: #EEEEEE;
+	color: #333444!important;
+}
+#outdoor .mui-table-view-cell.mui-active{
+	background-color: #EEEEEE;
 }
 
 /**
  * 温度
  */
 #temperature .mui-table-view {
-	background-color: #3E575F;
-	border-color: #3E575F;
-	color: #6FE3CD!important;
+	background-color: #6FE3CD;
+	border-color: #6FE3CD;
+	color: #333444!important;
 }
+#temperature .mui-table-view-cell.mui-active{
+	background-color: #6FE3CD;
+}
+
 
 /**
  * 湿度
  */
 #humidity .mui-table-view {
-	background-color: #42466A;
-	border-color: #42466A;
-	color: #818EFF!important;
+	background-color: #818EFF;
+	border-color: #818EFF;
+	color: #333444!important;
+}
+#humidity .mui-table-view-cell.mui-active{
+	background-color: #818EFF;
+}
+
+/**
+ * 氧气浓度
+ */
+#o2 .mui-table-view {
+	background-color: #6FE3CD;
+	border-color: #6FE3CD;
+	color: #333444!important;
+}
+#o2 .mui-table-view-cell.mui-active{
+	background-color: #6FE3CD;
 }
 
 /**
  * 光照
  */
 #illumination .mui-table-view {
-	background-color: #4B564D;
-	border-color: #4B564D;
-	color: #ACE070!important;
+	background-color: #ACE070;
+	border-color: #ACE070;
+	color: #333444!important;
 }
+#illumination .mui-table-view-cell.mui-active{
+	background-color: #ACE070;
+}
+
 
 /**
  * CO2
  */
 #co2 .mui-table-view {
-	background-color: #3D516A;
-	border-color: #3D516A;
-	color: #66C5FF!important;
+	background-color: #66C5FF;
+	border-color: #66C5FF;
+	color: #333444!important;
+}
+#co2 .mui-table-view-cell.mui-active{
+	background-color: #66C5FF;
+}
+
+/**
+ * 负离子
+ */
+#anion .mui-table-view {
+	background-color: #ACE070;
+	border-color: #ACE070;
+	color: #333444!important;
+}
+#anion .mui-table-view-cell.mui-active{
+	background-color: #ACE070;
+}
+
+.mui-content .item-title {
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.mui-content .item-title-warn {
+	font-weight: bold;
+	color: red;
 }
 
 .mui-content .item-value {
 	font-size: 40px;
 	font-weight: bold;
 	margin-left: 6px;
+}
+
+.mui-content .item-target-value {
+	font-weight: bold;
 }
 
 .body-right {
