@@ -39,7 +39,7 @@ public class DataSyncInfo {
     private O2Info o2;
 
     @ApiModelProperty(value ="负离子信息")
-    private AnionInfo anion;
+    private AnoinInfo anion;
 
     @ApiModelProperty(value ="同步时间，时间戳（秒）")
     private Integer syncTime;
