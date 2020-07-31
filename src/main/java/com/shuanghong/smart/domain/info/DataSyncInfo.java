@@ -37,6 +37,12 @@ public class DataSyncInfo {
     @ApiModelProperty(value ="C02信息")
     private Co2Info co2;
 
+    @ApiModelProperty(value ="氧气信息")
+    private OxygenInfo oxygen;
+
+    @ApiModelProperty(value ="负离子信息")
+    private AnoinInfo anoin;
+
     @ApiModelProperty(value ="同步时间，时间戳（秒）")
     private Integer syncTime;
 
