@@ -51,12 +51,17 @@
                 <ul class="mui-table-view">
                     <li class="mui-table-view-cell mui-media">
                         <div class="mui-media-body">
-                            <div class="body-left" style="width: 40%;float: left;">
-                                <div class="item-title"><img class="mui-media-object mui-pull-left" src="../images/smart/temperature_icon.png?v=1.1"><font :color="detail.temperature.status == 0 ? '' : 'red'">温度</font></div>
+                            <div class="body-left" style="width: 50%;float: left;">
+                                <div class="item-title">
+                                    <img class="mui-media-object mui-pull-left" src="../images/smart/temperature_icon.png?v=1.1">
+                                    <span class="mui-pull-left" style="height: 35px;line-height: 35px;"><font :color="detail.temperature.status == 0 ? '' : 'red'">温度</font></span>
+                                    <img class="mui-media-object" v-if="detail.temperature.status != 0" style="width: 20px;height: 20px;line-height: 20px;margin-left: 15px;" src="../images/smart/error_icon.png?v=1.1">
+                                    <span>&nbsp;</span>
+                                </div>
                                 <div class="item-value">{{detail.temperature.value}}</div>
-                                <div class="item-target-value">预设值：{{detail.temperature.startTarget}}~{{detail.temperature.endTarget}} 度</div>
+                                <div class="item-target-value">预设值：{{detail.temperature.startTarget}}℃~{{detail.temperature.endTarget}}℃</div>
                             </div>
-                            <div class="body-right" style="float: right;width: 60%;">
+                            <div class="body-right" style="float: right;width: 50%;">
                                 <img style="width: 70px;height: 70px;max-width: 70px;margin-right: 20px" class="mui-media-object item-img1" :src="'../images/smart/temperature'+ (detail.temperature.enable == 0 ? '_open' : 's_open') + '_icon.png?v=1.1'">
                                 <img style="width: 70px;height: 70px;max-width: 70px;" class="mui-media-object item-img2" :src="'../images/smart/temperature'+ (detail.temperature.enable == 0 ? 's_close' : '_close') + '_icon.png?v=1.1'">
                             </div>
@@ -71,12 +76,17 @@
                 <ul class="mui-table-view">
                     <li class="mui-table-view-cell mui-media">
                             <div class="mui-media-body">
-                                <div class="body-left" style="width: 40%;float: left;">
-                                    <div class="item-title"><img class="mui-media-object mui-pull-left" src="../images/smart/humidity_icon.png?v=1.1">湿度</div>
+                                <div class="body-left" style="width: 50%;float: left;">
+                                    <div class="item-title">
+                                        <img class="mui-media-object mui-pull-left" src="../images/smart/humidity_icon.png?v=1.1">
+                                        <span class="mui-pull-left" style="height: 35px;line-height: 35px;"><font :color="detail.humidity.status == 0 ? '' : 'red'">湿度</font></span>
+                                        <img class="mui-media-object" v-if="detail.humidity.status != 0" style="width: 20px;height: 20px;line-height: 20px;margin-left: 15px;" src="../images/smart/error_icon.png?v=1.1">
+                                        <span>&nbsp;</span>
+                                    </div>
                                     <div class="item-value">{{detail.humidity.value}}</div>
-                                    <div class="item-target-value">预设值：{{detail.humidity.startTarget}}~{{detail.humidity.endTarget}}</div>
+                                    <div class="item-target-value">预设值：{{detail.humidity.startTarget}}%~{{detail.humidity.endTarget}}%</div>
                                 </div>
-                                <div class="body-right" style="float: right;width: 60%;">
+                                <div class="body-right" style="float: right;width: 50%;">
                                     <img style="width: 70px;height: 70px;max-width: 70px;margin-right: 20px" class="mui-media-object item-img1" :src="'../images/smart/humidity'+ (detail.humidity.enable == 0 ? '_open' : 's_open') + '_icon.png?v=1.1'">
                                     <img style="width: 70px;height: 70px;max-width: 70px;" class="mui-media-object item-img2" :src="'../images/smart/humidity'+ (detail.humidity.enable == 0 ? 's_close' : '_close') + '_icon.png?v=1.1'">
                                 </div>
@@ -92,12 +102,17 @@
                 <ul class="mui-table-view">
                     <li class="mui-table-view-cell mui-media">
                         <div class="mui-media-body">
-                            <div class="body-left" style="width: 40%;float: left;">
-                                <div class="item-title"><img class="mui-media-object mui-pull-left" src="../images/smart/o2_icon.png?v=1.1">氧气浓度</div>
+                            <div class="body-left" style="width: 50%;float: left;">
+                                <div class="item-title">
+                                    <img class="mui-media-object mui-pull-left" src="../images/smart/o2_icon.png?v=1.1">
+                                    <span class="mui-pull-left" style="height: 35px;line-height: 35px;"><font :color="detail.o2.status == 0 ? '' : 'red'">氧气浓度</font></span>
+                                    <img class="mui-media-object" v-if="detail.o2.status != 0" style="width: 20px;height: 20px;line-height: 20px;margin-left: 15px;" src="../images/smart/error_icon.png?v=1.1">
+                                    <span>&nbsp;</span>
+                                </div>
                                 <div class="item-value">{{detail.o2.value}}</div>
-                                <div class="item-target-value">预设值：{{detail.o2.startTarget}}~{{detail.o2.endTarget}}</div>
+                                <div class="item-target-value">预设值：{{detail.o2.startTarget}}%~{{detail.o2.endTarget}}%</div>
                             </div>
-                            <div class="body-right" style="float: right;width: 60%;">
+                            <div class="body-right" style="float: right;width: 50%;">
                                 <img style="width: 70px;height: 70px;max-width: 70px;margin-right: 20px" class="mui-media-object item-img1" :src="'../images/smart/o2'+ (detail.o2.enable == 0 ? '_open' : 's_open') + '_icon.png?v=1.1'">
                                 <img style="width: 70px;height: 70px;max-width: 70px;" class="mui-media-object item-img2" :src="'../images/smart/o2'+ (detail.o2.enable == 0 ? 's_close' : '_close') + '_icon.png?v=1.1'">
                             </div>
@@ -112,15 +127,20 @@
                 <ul class="mui-table-view">
                     <li class="mui-table-view-cell mui-media">
                         <div class="mui-media-body">
-                            <div class="body-left" style="width: 40%;float: left;">
-                                <div class="item-title"><img class="mui-media-object mui-pull-left" src="../images/smart/illumination_icon.png?v=1.1">光照度</div>
+                            <div class="body-left" style="width: 50%;float: left;">
+                                <div class="item-title">
+                                    <img class="mui-media-object mui-pull-left" src="../images/smart/illumination_icon.png?v=1.1">
+                                    <span class="mui-pull-left" style="height: 35px;line-height: 35px;"><font :color="detail.illumination.status == 0 ? '' : 'red'">光照度</font></span>
+                                    <img class="mui-media-object" v-if="detail.illumination.status != 0" style="width: 20px;height: 20px;line-height: 20px;margin-left: 15px;" src="../images/smart/error_icon.png?v=1.1">
+                                    <span>&nbsp;</span>
+                                </div>
                                 <div class="item-value">{{detail.illumination.value}}</div>
-                                <div class="item-target-value">预设值：{{detail.illumination.startTarget}}~{{detail.illumination.endTarget}}</div>
+                                <div class="item-target-value">预设值：{{detail.illumination.startTarget}}%~{{detail.illumination.endTarget}}%</div>
                             </div>
-                            <div class="body-right" style="float: right;width: 60%;">
-                                <img v-if="detail.illumination.value <= 0" style="width: 80px;height: 80px;max-width: 80px;margin-right: 50px;" class="mui-media-object item-img1" src="../images/smart/illumination.png?v=1.1">
-                                <img v-else-if="detail.illumination.value >= 1 &&  detail.illumination.value < 50000" style="width: 80px;height: 80px;max-width: 80px;margin-right: 50px;" class="mui-media-object item-img1" src="../images/smart/illumination1.png?v=1.1">
-                                <img v-else-if="detail.illumination.value >= 50000 &&  detail.illumination.value < 100000" style="width: 80px;height: 80px;max-width: 80px;margin-right: 50px;" class="mui-media-object item-img1" src="../images/smart/illumination2.png?v=1.1">
+                            <div class="body-right" style="float: right;width: 50%;">
+                                <img v-if="detail.illumination.intensity == 0" style="width: 80px;height: 80px;max-width: 80px;margin-right: 50px;" class="mui-media-object item-img1" src="../images/smart/illumination.png?v=1.1">
+                                <img v-else-if="detail.illumination.intensity == 1" style="width: 80px;height: 80px;max-width: 80px;margin-right: 50px;" class="mui-media-object item-img1" src="../images/smart/illumination1.png?v=1.1">
+                                <img v-else-if="detail.illumination.intensity == 2" style="width: 80px;height: 80px;max-width: 80px;margin-right: 50px;" class="mui-media-object item-img1" src="../images/smart/illumination2.png?v=1.1">
                                 <img v-else style="width: 80px;height: 80px;max-width: 80px;margin-right: 50px;" class="mui-media-object item-img1" src="../images/smart/illumination3.png?v=1.1">
                             </div>
                         </div>
@@ -134,12 +154,17 @@
                 <ul class="mui-table-view">
                     <li class="mui-table-view-cell mui-media">
                         <div class="mui-media-body">
-                            <div class="body-left" style="width: 40%;float: left;">
-                                <div class="item-title"><img class="mui-media-object mui-pull-left" src="../images/smart/co2_icon.png?v=1.1">CO2</div>
+                            <div class="body-left" style="width: 50%;float: left;">
+                                <div class="item-title">
+                                    <img class="mui-media-object mui-pull-left" src="../images/smart/co2_icon.png?v=1.1">
+                                    <span class="mui-pull-left" style="height: 35px;line-height: 35px;"><font :color="detail.co2.status == 0 ? '' : 'red'">CO2</font></span>
+                                    <img class="mui-media-object" v-if="detail.co2.status != 0" style="width: 20px;height: 20px;line-height: 20px;margin-left: 15px;" src="../images/smart/error_icon.png?v=1.1">
+                                    <span>&nbsp;</span>
+                                </div>
                                 <div class="item-value">{{detail.co2.value}}</div>
-                                <div class="item-target-value">预设值：{{detail.co2.startTarget}}~{{detail.co2.endTarget}}</div>
+                                <div class="item-target-value">预设值：{{detail.co2.startTarget}}ppm~{{detail.co2.endTarget}}ppm</div>
                             </div>
-                            <div class="body-right" style="float: right;width: 60%;">
+                            <div class="body-right" style="float: right;width: 50%;">
                                 <img style="width: 70px;height: 70px;max-width: 70px;margin-right: 20px" class="mui-media-object item-img1" :src="'../images/smart/co2'+ (detail.co2.enable == 0 ? '_open' : 's_open') + '_icon.png?v=1.1'">
                                 <img style="width: 70px;height: 70px;max-width: 70px;" class="mui-media-object item-img2" :src="'../images/smart/co2'+ (detail.co2.enable == 0 ? 's_close' : '_close') + '_icon.png?v=1.1'">
                             </div>
@@ -154,12 +179,16 @@
                 <ul class="mui-table-view">
                     <li class="mui-table-view-cell mui-media">
                         <div class="mui-media-body">
-                            <div class="body-left" style="width: 40%;float: left;">
-                                <div class="item-title"><img class="mui-media-object mui-pull-left" src="../images/smart/anion_icon.png?v=1.1">负离子浓度</div>
+                            <div class="body-left" style="width: 50%;float: left;">
+                                <div class="item-title">
+                                    <img class="mui-media-object mui-pull-left" src="../images/smart/anion_icon.png?v=1.1">
+                                    <span class="mui-pull-left" style="height: 35px;line-height: 35px;"><font>负离子浓度</font></span>
+                                    <span>&nbsp;</span>
+                                </div>
                                 <div class="item-value">{{detail.anion.enable == 1 ? 'YES' : 'NO'}}</div>
                                 <div class="item-target-value">{{detail.anion.enable == 1 ? '设备开启' : '设备关闭'}}</div>
                             </div>
-                            <div class="body-right" style="float: right;width: 60%;">
+                            <div class="body-right" style="float: right;width: 50%;">
                                 <img style="width: 100px;height: 100px;max-width: 100px;margin-right: 30px;margin-top: 20px;" class="mui-media-object item-img1" :src="'../images/smart/anion'+ (detail.anion.enable == 0 ? '_open' : 's_open') + '_icon.png?v=1.1'">
                             </div>
                         </div>
